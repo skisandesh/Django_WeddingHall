@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+      {% load static %}
+    <script src="{% static 'app.js' %}"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" style type="text/css" href="{% static 'sites/base.css'%}">
+      <title>Wedding Hall</title>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-dark fixed-top trn">
+            <a class="navbar-brand" href="/">Dream Wedding Venues</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        <div class="collapse navbar-collapse ml-5" id="navbarNav">
+        <ul class="navbar-nav">
+           <li class="nav-item hactive">
+               <a class="nav-link" href="/">Home<span class="sr-only">(current)</span></a>
+           </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/search/">Search</a>
+      </li>
+
+            {% if user.is_authenticated %}
+                <li class="nav-item">
+                    <a class="nav-link" href="/my_list/">My List</a>
+                </li>
+            {% endif %}
+             <li class="nav-item">
+        <a class="nav-link " href="/contact/">Contact Us</a>
+         </li>
+        </ul>
+            <div class="mrt ml-auto mr-5">
+                <ul class="navbar-nav">
+       {% if user.is_authenticated %}
+      <li class="nav-item">
+        <a class="nav-link" href="/accounts/logout/">Logout</a>
+                    <li class="nav-item">
+                  {% else %}
+                   <a class="nav-link" href="/accounts/login/">Login</a>
+              </li>
+              {% endif %}
+              <li class="nav-item">
+        <a class="nav-link" href="/accounts/signup/">Register</a>
+              </li>
+                </ul>
+        </div>
+        </div>
+</nav>
+    <!-- navbar end here -->
+    <!--scripts-->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    {% block content %}
+{% endblock %}
+</body>
+</html>

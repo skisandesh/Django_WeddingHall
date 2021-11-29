@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&display=swap');
+<!--variables used-->
+:root{
+rgba(173, 181, 189);
+rgba(243, 243, 253);
+rgba(209, 70, 202);
+rgba(255,255,255);
+#000;
+--body-font: 'Quicksand', sans-serif;
+--normal-font-size: 1rem;
+}
+
+*,::before,::after{
+box-sizing:border-box;
+}
+
+body{
+margin: 40px;
+padding: 20px;
+}
+
+.main{
+background-color: rgba(255,255,255);
+padding:50px 0;
+}
+
+.card{
+background-color:rgba(209, 70, 202);
+box-shadow:0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+width:300px;
+border-radius:29px;
+}
+
+.pay{
+font-size: 18px;
+color: rgba(255,255,255);
+font-weight: 600;
+margin-top: 5px;
+}
+
+.amount{
+background-color: rgba(243, 243, 253);
+border-radius:8px;
+}
+
+.labeltxt{
+font-size: 13px;
+color:rgba(173, 181, 189);
+font-weight: 500;
+margin-top: 5px;
+}
+
+.image{
+position: relative;
+top: 44px;
+right: 13px;
+}
+
+.form-control:focus{
+box-shadow: none;
+}
+
+.inputtxt{
+color:rgba(69, 74, 74, 1) !important;
+font-weight: bold;
+font-size: 14px;
+padding: 21px 15px;
+border:2px solid rgba(173, 181, 189);
+border-radius: 7px;
+}
+
+.exptxt{
+color:rgba(173, 181, 189);
+font-size:13px;
+font-weight: 500;
+}
+
+.cvvtxt{
+color:rgba(173, 181, 189);
+font-size:13px;
+font-weight: 500;
+}
+
+.expiry{
+padding 21px 15px;
+width:120px;
+font-size:14px;
+font-weight:bold;
+border:2px solid rgba(173, 181, 189);
+border-radius:7px;
+}
+
+.cvv{
+padding: 21px 15px;
+width: 120px;
+border:2px solid rgba(173, 181, 189));
+border-radius:7px;
+}
+
+.cancel{
+color:rgba(173, 181, 189);
+font-size:14px;
+font-weight: 500;
+border:none;
+}
+
+.cancel:hover, .cancel:focus{
+box-shadow:none;
+color:rgba(209, 70, 202);
+background-color:rgba(173, 181, 189);
+}
+
+.payment{
+font-weight: 600;
+font-size: 14px;
+background-color: rgba(243, 243, 253);
+border:none;
+width:150px;
+color: rgba(209, 70, 202);
+padding: 15px 10px;
+border-radius: 11px;
+cursor: pointer;
+}
+
+.payment:hover{
+color:rgba(209, 70, 202);
+}
+
+

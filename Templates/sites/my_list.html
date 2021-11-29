@@ -1,0 +1,46 @@
+{% extends 'sites/base.html' %}
+
+{% block content %}
+
+{% csrf_token %}
+<meta charset="UTF-8">
+{% load static %}
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+ <link rel="stylesheet" style type="text/css" href="{% static 'sites/hall_list.css'%}">
+
+
+    <div class="mt-xl-5">
+    {% for data in data %}
+             <div class="holdingcontainer ">
+
+                 <div  style="width: 20rem;">
+                     <img alt="error" src="{{ data.hallimg.url }}" width="340" height="240">
+                     <div class="card-body">
+                     <form action="/my_list/" method="post" id="release" >
+                     {% csrf_token %}
+                        <button  type="submit" value="{{ data.name }}"  class='btn btn-primary' name="release">Cancel Booking</button>
+                     </form>
+
+                    </div>
+                </div>
+
+
+            <div class="text-right">
+            <p> Name :{{ data.name }}</p>
+                <p>Location :{{ data.location }}</p>
+            <p>Contact :{{ data.contact }}</p>
+            <p> Email :{{ data.email }}</p>
+            <p> Cost :{{ data.cost }}</p>
+            <p> Area :{{ data.area }}</p>
+                {% for profile in profile %}
+                {% if data.name in profile.list %}
+                  <p>Booked for :{{ profile.booked_date }}</p>
+                {% endif %}
+                    {% endfor %}
+            </div>
+           </div>
+        {% endfor %}
+    </div>
+
+{% endblock %}

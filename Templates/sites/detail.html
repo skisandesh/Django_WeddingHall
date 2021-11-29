@@ -1,0 +1,19 @@
+{% extends 'sites/base.html' %}
+{% block content %}
+{% csrf_token %}
+{% for data in data %}
+        <div class="container">
+            <img alt="error" src="{{ data.hallimg.url }}" width="240" height="240">
+            <p > Name :{{ data.name }}</p>
+            <p>Contact :{{ data.contact }}</p>
+            <p> Email :{{ data.email }}</p>
+            <p> Cost :{{ data.cost }}</p>
+            <p> Area :{{ data.area }}</p>
+            {% if user.is_authenticated %}
+                <a class="btn btn-primary" href="{% url 'bookhall' hall_name=data.name %}">Book Now</a>
+            {% else %}
+                <a class="btn btn-primary" href="/accounts/login">Login To Book</a>
+            {% endif %}
+         </div>
+{% endfor %}
+{% endblock %}

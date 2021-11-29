@@ -1,0 +1,29 @@
+{% extends 'sites/base.html' %}
+{% block content %}
+ {% load static %}
+ <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<link rel="stylesheet" style type="text/css" href="{% static 'sites/search.css'%}">
+<body>
+<div class="container">
+    <div class="text-center">
+        <form action="{% url 'data' %}" method="post">
+       <h4>Select a venue to book</h4> <br>
+        <div class="select">
+            <select  class="btn btn-secondary btn-lg dropdown-toggle" id="location" name="locations" required>
+
+                <option value="Biratnagar" >Biratnagar</option>
+                <option value="Itahari">Itahari</option>
+                <option value="Damak">Damak</option>
+                <option value="Birtamod">Birtamod</option>
+            </select><br><br></div>
+  <h4 >Booking Date</h4><br>
+    <input class="btn btn-danger btn-secondary btn-lg dropdown-toggle"  name="date" type="date" required/>
+
+{% csrf_token %}
+<br><br>
+ <button type="submit" id="aa" class="btn btn-primary">Search</button>
+ </form>
+</div>
+</div>
+{% endblock %}
+</body>

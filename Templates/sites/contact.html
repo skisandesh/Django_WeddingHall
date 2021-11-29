@@ -1,0 +1,83 @@
+{% extends 'sites/base.html' %}
+{% block content %}
+
+ {% load static %}
+<script src="{% static 'app.js' %}"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Form</title>
+<link rel="stylesheet" style type="text/css" href="{% static 'sites/contact.css'%}">
+    <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
+  <body>
+    <div class="container">
+      <span class="big-circle"></span>
+      <img src="img/shape.png" class="square" alt="" />
+      <div class="form">
+        <div class="contact-info">
+          <h3 class="title">Let's get in touch</h3>
+          <p class="text">
+            Our main office in Biratnagar,including our other branch offices in
+            Itahari, Birtamode, Damak and also provide you with the most desired facilities.
+          </p>
+            <div class="info">
+            <div class="information">
+              <img src="/static/images/location.png" class="icon" alt="" />
+              <p>Biratnagar, Morang, Provice no 1, Nepal</p>
+            </div>
+            <div class="information">
+              <img src="/static/images/email.png" class="icon" alt="" />
+              <p>dream.weddings@gmail.com</p>
+            </div>
+            <div class="information">
+              <img src="/static/images/phone.png" class="icon" alt="" />
+              <p>+977-XXXXXXXXXX</p>
+            </div>
+          </div>
+
+          <div class="social-media">
+            <p>Connect with us :</p>
+            <div class="social-icons">
+              <a href="https://www.facebook.com/sandeshski/">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="http://127.0.0.1:8000/">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a href="http://127.0.0.1:8000/">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="http://127.0.0.1:8000/">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form">
+          <span class="circle one"></span>
+          <span class="circle two"></span>
+
+          <form   method="post" id="feedback" >
+            {% csrf_token %}
+              <p><pre>username :{{ form.username }}</pre></p>
+              <p><pre>email    :{{ form.email }}</pre></p>
+              <p><pre>number   :{{ form.number }}</pre></p>
+              <p>message  :{{ form.feedback }}</p>
+            <input type="submit" class="btn"/>
+          </form>
+        </div>
+      </div>
+    </div>
+
+
+      <script type="text/javascript">
+        function clicked() {
+            alert('message received')
+        }
+
+
+
+    </script>
+
+
+{% endblock %}
+  </body>
